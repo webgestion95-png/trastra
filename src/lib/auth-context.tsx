@@ -1,0 +1,154 @@
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import type { Session, User } from "@supabase/supabase-js";
+import { supabase } from "@/integrations/supabase/client";
+import i18n from "i18next";
+
+type Role = "admin" | "user";
+
+interface AuthContextValue {
+  user: User | null;
+  session: Session | null;
+  role: Role | null;
+  loading: boolean;
+  signUp: (email: string, password: string, fullName: string, phone: string, lang: string) => Promise<{ error: Error | null }>;
+  signIn: (email: string, password: string) => Promise<{ error: Error | null }>;
+  signOut: () => Promise<void>;
+}
+
+const AuthContext = createContext<AuthContextValue | undefined>(undefined);
+
+export function AuthProvider({ children }: { children: ReactNode }) {
+  const [user, setUser] = useState<User | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
+  const [role, setRole] = useState<Role | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+  let active = true;
+  const failSafe = window.setTimeout(() => {
+    if (active) setLoading(false);
+  }, 2500);
+
+  // IMPORTANT: CAPTURE SUBSCRIPTION
+  const {
+    data: { subscription },
+  } = supabase.auth.onAuthStateChange((_event, newSession) => {
+    if (!active) return;
+
+    setSession(newSession);
+    setUser(newSession?.user ?? null);
+
+    // NO USER
+    if (!newSession?.user) {
+      setRole(null);
+      setLoading(false);
+      return;
+    }
+
+    // EMAIL NON CONFIRMÉ
+    if (!newSession.user.email_confirmed_at) {
+      setRole(null);
+      setLoading(false);
+      return;
+    }
+
+    setRole(null);
+
+    setTimeout(() => {
+      void fetchRole(newSession.user.id);
+    }, 0);
+
+    setLoading(false);
+  });
+
+  // CHECK SESSION INITIALE
+  supabase.auth
+    .getSession()
+    .then(({ data: { session: existing } }) => {
+      if (!active) return;
+
+      setSession(existing);
+      setUser(existing?.user ?? null);
+
+      if (!existing?.user) {
+        setRole(null);
+        setLoading(false);
+        return;
+      }
+
+      if (!existing.user.email_confirmed_at) {
+        setRole(null);
+        setLoading(false);
+        return;
+      }
+
+      setRole(null);
+      void fetchRole(existing.user.id);
+    })
+    .catch(() => {
+      if (!active) return;
+      setSession(null);
+      setUser(null);
+      setRole(null);
+    })
+    .finally(() => {
+      if (!active) return;
+      window.clearTimeout(failSafe);
+      setLoading(false);
+    });
+
+  return () => {
+    active = false;
+    window.clearTimeout(failSafe);
+    subscription.unsubscribe();
+  };
+}, []);
+
+  async function fetchRole(userId: string) {
+    const { data } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", userId);
+    if (data && data.length > 0) {
+      // admin wins if both
+      const isAdmin = data.some((r) => r.role === "admin");
+      setRole(isAdmin ? "admin" : "user");
+    } else {
+      setRole("user");
+    }
+  }
+
+  async function signUp(email: string, password: string, fullName: string, phone: string, lang: string) {
+    const redirectUrl = `${window.location.origin}/dashboard`;
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: redirectUrl,
+        data: { full_name: fullName, phone, lang: lang.substring(0,2).toLowerCase(), },
+      },
+    });
+    return { error };
+  }
+
+  async function signIn(email: string, password: string) {
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    return { error };
+  }
+
+  async function signOut() {
+    await supabase.auth.signOut();
+  }
+
+  return (
+    <AuthContext.Provider value={{ user, session, role, loading, signUp, signIn, signOut }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+export function useAuth() {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth must be used within AuthProvider");
+  return ctx;
+}
