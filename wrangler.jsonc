@@ -6,6 +6,7 @@
   "main": "dist/server/server.js",
 
   "assets": {
+    "binding": "ASSETS",
     "directory": "./dist/client"
   },
   
