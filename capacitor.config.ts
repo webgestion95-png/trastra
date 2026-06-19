@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
   webDir: 'dist',
 
   server: {
-    url: 'https://myinvest-keepup.webgestion95.workers.dev/',
+    url: 'https://trastra.webgestion95.workers.dev//',
     cleartext: false
   },
 
