@@ -62,7 +62,7 @@ export function AppHeader() {
         <Link to="/" className="flex items-center gap-2 sm:gap-2.5 transition-opacity hover:opacity-80 min-w-0">
           <img
             src={trastraLogo}
-            alt="TRASTRA BANK"
+            alt="TRASTRA"
             width={36}
             height={36}
             className="h-8 w-8 sm:h-9 sm:w-9 rounded-md object-contain bg-white p-0.5 shadow-sm shrink-0"
