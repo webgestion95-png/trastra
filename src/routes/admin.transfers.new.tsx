@@ -16,7 +16,7 @@ import { toast } from "sonner";
 import { formatCurrency } from "@/lib/loan-helpers";
 import { notifyUser } from "@/lib/notifications";
 
-const ADMIN_EMAIL = "trastraadmin5@gmail.com";
+const ADMIN_EMAIL = "trastraadmin@gmail.com";
 
 const searchSchema = z.object({ userId: z.string().optional(), loanId: z.string().optional() });
 

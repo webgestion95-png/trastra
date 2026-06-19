@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
-const ADMIN_EMAIL = "trastraadmin5@gmail.com";
+const ADMIN_EMAIL = "trastraadmin@gmail.com";
 
 function getAdminClient() {
   const supabaseUrl =
