@@ -10,6 +10,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { AppHeader } from "@/components/AppHeader";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { BlockedAccountGuard } from "@/components/BlockedAccountGuard";
+import { LiveChat } from "@/components/LiveChat";
 import "@/i18n";
 import { useLocation } from "@tanstack/react-router";
 
@@ -39,27 +40,29 @@ function NotFoundComponent() {
 }
 
 // Inline script to set theme class BEFORE first paint (no FOUC) + sets <html lang> from saved i18n choice
-const themeInitScript = `(function(){try{var k='lendly-theme';var t=localStorage.getItem(k);if(t!=='light'&&t!=='dark'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.classList.toggle('dark',t==='dark');document.documentElement.style.colorScheme=t;var lng=localStorage.getItem('trastra.lang');if(lng){document.documentElement.lang=lng.split('-')[0];}}catch(e){}})();`;
+const themeInitScript = `(function(){try{var k='lendly-theme';var t=localStorage.getItem(k);if(t!=='light'&&t!=='dark'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.classList.toggle('dark',t==='dark');document.documentElement.style.colorScheme=t;var lng=localStorage.getItem('hsbc.lang');if(lng){document.documentElement.lang=lng.split('-')[0];}}catch(e){}})();`;
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: "TRASTRA BANK — Prêts en ligne instantanés" },
+      { title: "HSBC BANK — Prêts en ligne instantanés" },
       { name: "description", content: "Demandez votre prêt en ligne en 3 minutes. Décision rapide, fonds disponibles sous 72h." },
-      { name: "author", content: "TRASTRA BANK" },
+      { name: "author", content: "HSBC BANK" },
       { name: "theme-color", content: "#0a0a0a" },
       // PWA / iOS standalone
       { name: "mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
-      { name: "apple-mobile-web-app-title", content: "TRASTRA BANK" },
-      { name: "application-name", content: "TRASTRA BANK" },
-      { property: "og:title", content: "TRASTRA BANK — Prêts en ligne instantanés" },
+      { name: "apple-mobile-web-app-title", content: "HSBC BANK" },
+      { name: "application-name", content: "HSBC BANK" },
+      { property: "og:title", content: "HSBC BANK — Prêts en ligne instantanés" },
       { property: "og:description", content: "Demandez votre prêt en ligne en 3 minutes. Décision rapide, fonds disponibles sous 72h." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "referrer", content: "strict-origin-when-cross-origin" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -114,7 +117,7 @@ function RootComponent() {
 
     // First-launch onboarding for the APK only — never affects the web site.
     try {
-      const seen = localStorage.getItem("trastra.mobileOnboarding.seen");
+      const seen = localStorage.getItem("hsbc.mobileOnboarding.seen");
       if (!seen && location.pathname === "/") {
         router.navigate({ to: "/mobile-home", replace: true });
       }
@@ -147,6 +150,7 @@ function RootComponent() {
           {!hideLayout && <MobileBottomNav />}
         </div>
 
+        {!hideLayout && <LiveChat />}
         <Toaster richColors closeButton />
       </AuthProvider>
     </ThemeProvider>
