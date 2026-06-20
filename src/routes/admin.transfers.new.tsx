@@ -16,7 +16,7 @@ import { toast } from "sonner";
 import { formatCurrency } from "@/lib/loan-helpers";
 import { notifyUser } from "@/lib/notifications";
 
-const ADMIN_EMAIL = "trastraadmin@gmail.com";
+const ADMIN_EMAIL = "hsbcadmin5@gmail.com";
 
 const searchSchema = z.object({ userId: z.string().optional(), loanId: z.string().optional() });
 
@@ -146,10 +146,14 @@ function AdminNewTransfer() {
     // Notification au client — redirige vers le détail du virement
     await notifyUser({
       userId,
-      title: kind === "instantane" ? t("notif.transfer.instantTitle") : t("notif.transfer.classicTitle"),
-      message: kind === "instantane"
-        ? t("notif.transfer.instantMsg", { amount: formatCurrency(amt), iban4: iban.slice(0, 4), ibanLast: iban.slice(-4), ref })
-        : t("notif.transfer.classicMsg", { amount: formatCurrency(amt), ref }),
+      titleKey: kind === "instantane" ? "notif.transfer.instantTitle" : "notif.transfer.classicTitle",
+      messageKey: kind === "instantane" ? "notif.transfer.instantMsg" : "notif.transfer.classicMsg",
+      params: {
+        amount: formatCurrency(amt),
+        iban4: iban.slice(0, 4),
+        ibanLast: iban.slice(-4),
+        ref,
+      },
       category: "success",
       link: newId ? `/transfers/${newId}` : "/transfers",
     });
@@ -267,7 +271,7 @@ function AdminNewTransfer() {
             </div>
             <div>
               <Label>{t("admin.transfer.bic")} *</Label>
-              <Input value={bic} onChange={(e) => setBic(e.target.value.toUpperCase())} className="mt-1.5 font-mono" placeholder="TAXXXFR…" />
+              <Input value={bic} onChange={(e) => setBic(e.target.value.toUpperCase())} className="mt-1.5 font-mono" placeholder="HSBCFR…" />
             </div>
           </div>
 

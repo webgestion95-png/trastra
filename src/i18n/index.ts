@@ -61,7 +61,7 @@ if (!i18n.isInitialized) {
       detection: {
         order: ["localStorage", "navigator", "htmlTag", "path", "subdomain"],
         caches: ["localStorage", "cookie"],
-        lookupLocalStorage: "trastra.lang",
+        lookupLocalStorage: "hsbc.lang",
       },
     });
 
@@ -79,7 +79,7 @@ if (!i18n.isInitialized) {
     const handleSystemChange = () => {
       // Only auto-follow system language if the user never explicitly picked one
       try {
-        const stored = window.localStorage.getItem("trastra.lang");
+        const stored = window.localStorage.getItem("hsbc.lang");
         if (stored) return;
       } catch {
         /* ignore */
