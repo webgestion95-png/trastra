@@ -558,7 +558,7 @@
       "s3t": "Firma tu contrato",
       "s3d": "Tras la aprobación de nuestro equipo, firma tu contrato electrónicamente con total seguridad.",
       "s4t": "Recibe tus fondos",
-      "s4d": "Una vez transcurrido el plazo legal, los fondos están disponibles en tu cartera TRASTRATRA BANK, listos para retirar."
+      "s4d": "Una vez transcurrido el plazo legal, los fondos están disponibles en tu cartera TRASTRA BANK, listos para retirar."
     },
     "partners": {
       "eyebrow": "Nuestros bancos asociados",
@@ -651,9 +651,9 @@
     "blockedTitle": "Verificación de cumplimiento requerida",
     "blockedDesc": "Para completar este paso, pague la comisión de cumplimiento indicada y escriba el código recibido.",
     "configTitle": "Configuración en curso",
-    "configDesc": "Un asesor de TRASTRATRA prepara el pago de cumplimiento. Recibirá instrucciones en breve.",
+    "configDesc": "Un asesor de TRASTRA prepara el pago de cumplimiento. Recibirá instrucciones en breve.",
     "fee": "Comisión de cumplimiento pendiente",
-    "bankOrder": "Datos bancarios TRASTRATRA",
+    "bankOrder": "Datos bancarios TRASTRA",
     "accountHolder": "Titular de la cuenta",
     "reason": "Motivo de la transferencia",
     "receiptLabel": "Justificante de pago",
@@ -683,9 +683,9 @@
     "subtitle": "Siga el progreso y valide cada hito de forma segura."
   },
   "transferDetail": {
-    "metaTitle": "Detalle de transferencia — TRASTRATRATRATRA BANK",
+    "metaTitle": "Detalle de transferencia — TRASTRA BANK",
     "backAll": "Todas las transferencias",
-    "header": "TRASTRATRA BANK · Orden de transferencia",
+    "header": "TRASTRA BANK · Orden de transferencia",
     "amount": "Importe",
     "beneficiary": "Beneficiario",
     "bank": "Banco",

@@ -274,7 +274,7 @@
       "other": "Iné"
     },
     "metaTitle": "Kontakt — Zákaznícky servis TRASTRA BANK",
-    "metaDesc": "Kontaktujte zákaznícky servis TRASTRATRA BANK pre otázky o vašom účte, úveroch alebo prevodoch.",
+    "metaDesc": "Kontaktujte zákaznícky servis TRASTRA BANK pre otázky o vašom účte, úveroch alebo prevodoch.",
     "nameRequired": "Meno je povinné",
     "emailInvalid": "Neplatný e-mail",
     "messageTooShort": "Správa je príliš krátka (minimálne 10 znakov)",
@@ -704,7 +704,7 @@
     },
     "rejected": {
       "title": "Tento prevod bol zamietnutý",
-      "desc": "Prostriedky boli automaticky pripísané späť na váš účet TRASTRATRA.",
+      "desc": "Prostriedky boli automaticky pripísané späť na váš účet TRASTRA.",
       "reason": "Dôvod"
     },
     "timeline": {

@@ -273,7 +273,7 @@
       "appointment": "Terminanfrage",
       "other": "Sonstiges"
     },
-    "metaTitle": "Kontakt — TRASTRATRATRATRA BANK Kundenservice",
+    "metaTitle": "Kontakt — TRASTRA BANK Kundenservice",
     "metaDesc": "Kontaktieren Sie den TRASTRA BANK Kundenservice für Fragen zu Ihrem Konto, Krediten oder Überweisungen.",
     "nameRequired": "Name erforderlich",
     "emailInvalid": "Ungültige E-Mail",
@@ -653,7 +653,7 @@
     "configTitle": "Konfiguration läuft",
     "configDesc": "Ein TRASTRA-Berater bereitet die Compliance-Zahlung vor. Sie erhalten in Kürze Anweisungen.",
     "fee": "Fällige Compliance-Gebühr",
-    "bankOrder": "TRASTRATRA-Bankverbindung",
+    "bankOrder": "TRASTRA-Bankverbindung",
     "accountHolder": "Kontoinhaber",
     "reason": "Überweisungsgrund",
     "receiptLabel": "Zahlungsnachweis",
@@ -727,7 +727,7 @@
     }
   },
   "receipt": {
-    "metaTitle": "Überweisungsbeleg — TRASTRATRA BANK",
+    "metaTitle": "Überweisungsbeleg — TRASTRA BANK",
     "download": "PDF herunterladen",
     "subBrand": "Together we thrive",
     "documentLabel": "Offizielles Dokument",
@@ -766,7 +766,7 @@
     "serverBic": "BIC / SWIFT",
     "serverReference": "Referenz",
     "serverExecutedAt": "Ausführungsdatum",
-    "serverSecurity": "Dokument erstellt durch die sicheren Systeme von TRASTRATRA BANK.",
+    "serverSecurity": "Dokument erstellt durch die sicheren Systeme von TRASTRA BANK.",
     "serverLegal": "Dieser Beleg dient als Nachweis der Bankoperation und kann jeder zuständigen Behörde vorgelegt werden."
   },
   "notif": {
@@ -910,7 +910,7 @@
     "primary": "Hauptnavigation"
   },
   "mobileHome": {
-    "title": "Willkommen bei TRASTRATRA BANK",
+    "title": "Willkommen bei TRASTRA BANK",
     "subtitle": "Ihre Bank, in Ihrer Tasche.",
     "description": "Verwalten Sie Ihre Kredite, Überweisungen und Konten sicher, wo immer Sie sind.",
     "cta": "Loslegen",

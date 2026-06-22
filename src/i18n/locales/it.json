@@ -136,7 +136,7 @@
     "viewLoan": "Visualizza il dossier",
     "needHelp": "Hai bisogno di aiuto?",
     "contactSupport": "Contatta il servizio clienti",
-    "metaTitle": "Il mio pannello — TRASTRATRA BANK",
+    "metaTitle": "Il mio pannello — TRASTRA BANK",
     "sessionExpired": "Sessione scaduta per inattività",
     "loadError": "Errore di caricamento",
     "welcomeNamed": "Benvenuto, {{name}}",
@@ -273,7 +273,7 @@
       "appointment": "Richiesta di appuntamento",
       "other": "Altro"
     },
-    "metaTitle": "Contatti — Servizio clienti TRASTRATRA BANK",
+    "metaTitle": "Contatti — Servizio clienti TRASTRA BANK",
     "metaDesc": "Contatta il servizio clienti TRASTRA BANK per qualsiasi domanda sul tuo conto, prestiti o bonifici.",
     "nameRequired": "Nome richiesto",
     "emailInvalid": "Email non valida",
@@ -955,7 +955,7 @@
       "transfer": "I tuoi bonifici sono nella sezione «Bonifici» della dashboard.",
       "contact": "Il team è raggiungibile al +44 7529 529674 o tramite la pagina Contatti.",
       "thanks": "Prego! Chiedi pure altre informazioni.",
-      "default": "Un consulente TRASTRATRA ti risponderà a breve. Puoi anche contattarci tramite la pagina Contatti."
+      "default": "Un consulente TRASTRA ti risponderà a breve. Puoi anche contattarci tramite la pagina Contatti."
     }
   }
 }

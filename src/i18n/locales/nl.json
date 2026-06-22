@@ -136,7 +136,7 @@
     "viewLoan": "Bekijk dossier",
     "needHelp": "Hulp nodig?",
     "contactSupport": "Klantenservice contacteren",
-    "metaTitle": "Mijn dashboard — TRASTRATRA BANK",
+    "metaTitle": "Mijn dashboard — TRASTRA BANK",
     "sessionExpired": "Sessie verlopen door inactiviteit",
     "loadError": "Laadfout",
     "welcomeNamed": "Welkom, {{name}}",
@@ -524,12 +524,12 @@
     }
   },
   "landing": {
-    "metaTitle": "TRASTRA BANK — Directe online leningen",
+    "metaTitle": "TRASTRATRA BANK — Directe online leningen",
     "metaDesc": "Financier je projecten met vertrouwen. Snelle persoonlijke leningen van € 1.000 tot € 50.000. Beslissing in 24u, fondsen binnen 72u.",
     "badge": "Beslissing binnen 24 uur",
     "heroTitleA": "Financier je projecten",
     "heroTitleB": "met vertrouwen.",
-    "heroDesc": "TRASTRA BANK behoort tot de beste generatie Europese banken die snelle, transparante en veilige persoonlijke leningen aanbieden.",
+    "heroDesc": "TRASTRATRA BANK behoort tot de beste generatie Europese banken die snelle, transparante en veilige persoonlijke leningen aanbieden.",
     "ctaPrimary": "Lening aanvragen",
     "ctaSecondary": "Ik heb al een account",
     "trust1": "Versleutelde gegevens",
