@@ -1,4 +1,4 @@
-// HSBC BANK service worker — Web Push only (no offline caching to avoid stale UI)
+// TRASTRA service worker — Web Push only (no offline caching to avoid stale UI)
 self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
@@ -12,14 +12,14 @@ self.addEventListener("push", (event) => {
   try {
     data = event.data ? event.data.json() : {};
   } catch (_) {
-    data = { title: "HSBC BANK", body: event.data ? event.data.text() : "" };
+    data = { title: "RASTRA", body: event.data ? event.data.text() : "" };
   }
-  const title = data.title || "HSBC BANK";
+  const title = data.title || "TRASTRA";
   const options = {
     body: data.body || data.message || "",
     icon: "/icon-512.png",
     badge: "/icon-512.png",
-    tag: data.tag || data.title || "hsbc",
+    tag: data.tag || data.title || "trastra",
     data: { url: data.link || data.url || "/" },
   };
   event.waitUntil(self.registration.showNotification(title, options));
