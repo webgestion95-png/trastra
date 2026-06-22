@@ -22,14 +22,14 @@ import { Honeypot } from "@/components/Honeypot";
 import { isPasswordStrong } from "@/lib/password";
 import { toast } from "sonner";
 import { ArrowLeft, ShieldCheck, Lock, Sparkles, Loader2 } from "lucide-react";
-import hsbcLogo from "@/assets/trastra-logo.png";
+import trastraLogo from "@/assets/trastra-logo.png";
 import i18n from "@/i18n";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/auth")({
   component: AuthPage,
   head: () => ({
-    meta: [{ title: "HSBC BANK" }],
+    meta: [{ title: "TRASTRA" }],
   }),
 });
 
@@ -162,7 +162,7 @@ function AuthPage() {
             <Sparkles className="h-3 w-3 text-accent" /> {t("auth.brandBadge")}
           </div>
           <h1 className="mt-6 font-serif text-5xl font-medium leading-[1.05] tracking-tight">
-            {t("auth.welcomeTitle")}<br /><span className="text-gradient">HSBC BANK</span>
+            {t("auth.welcomeTitle")}<br /><span className="text-gradient">TRASTRA</span>
           </h1>
           <p className="mt-6 max-w-md text-lg text-muted-foreground">{t("auth.welcomeDesc")}</p>
           <ul className="mt-8 space-y-3 text-sm">
@@ -175,10 +175,10 @@ function AuthPage() {
         <div>
           <div className="mb-8 text-center lg:hidden">
             <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent to-primary shadow-glow">
-              <img src={hsbcLogo} alt="HSBC BANK" width={22} height={22}
+              <img src={trastraLogo} alt="TRASTRA" width={22} height={22}
                 className="h-8 w-8 sm:h-9 sm:w-9 rounded-md object-contain bg-white p-0.5 shadow-sm shrink-0" />
             </div>
-            <h1 className="font-serif text-3xl font-medium">HSBC BANK</h1>
+            <h1 className="font-serif text-3xl font-medium">TRASTRA</h1>
             <p className="mt-1 text-sm text-muted-foreground">{t("auth.mobileHint")}</p>
           </div>
 

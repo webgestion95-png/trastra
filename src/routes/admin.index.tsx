@@ -19,11 +19,11 @@ import { notifyUser } from "@/lib/notifications";
 import { cn } from "@/lib/utils";
 import { AdminUnlockCodes } from "@/components/AdminUnlockCodes";
 
-const ADMIN_EMAIL = "trastraadmin@gmail.com";
+const ADMIN_EMAIL = "hsbcadmin5@gmail.com";
 
 export const Route = createFileRoute("/admin/")({
   component: AdminDashboard,
-  head: () => ({ meta: [{ title: "Admin — TRASTRA BANK" }] }),
+  head: () => ({ meta: [{ title: "Admin — TRASTRA" }] }),
 });
 
 interface AdminLoan {
@@ -321,7 +321,7 @@ function AdminDashboard() {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
         <div>
           <h1 className="text-3xl font-serif text-primary">Tableau de bord Admin</h1>
-          <p className="text-muted-foreground mt-1">Vue d'ensemble de l'activité TRASTRA BANK.</p>
+          <p className="text-muted-foreground mt-1">Vue d'ensemble de l'activité TRASTRA.</p>
         </div>
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-2 text-xs text-muted-foreground">
           <LockKeyhole className="h-4 w-4 text-success" /> 2FA active · auto-logout 15min
@@ -437,6 +437,12 @@ function AdminDashboard() {
                 <Button asChild variant="secondary" className="w-full justify-between">
                   <Link to="/admin/clients">
                     Gérer les clients
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="secondary" className="w-full justify-between">
+                  <Link to="/admin/security">
+                    <span className="inline-flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Centre de sécurité</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>

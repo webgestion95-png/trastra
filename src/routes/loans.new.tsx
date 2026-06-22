@@ -15,7 +15,7 @@ import i18n from "@/i18n";
 
 export const Route = createFileRoute("/loans/new")({
   component: NewLoan,
-  head: () => ({ meta: [{ title: i18n.t("loanForm.title") + " — HSBC BANK" }] }),
+  head: () => ({ meta: [{ title: i18n.t("loanForm.title") + " — TRASTRA" }] }),
 });
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB

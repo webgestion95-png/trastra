@@ -16,7 +16,7 @@ import { toast } from "sonner";
 import { formatCurrency } from "@/lib/loan-helpers";
 import { notifyUser } from "@/lib/notifications";
 
-const ADMIN_EMAIL = "hsbcadmin5@gmail.com";
+const ADMIN_EMAIL = "trastraadmin@gmail.com";
 
 const searchSchema = z.object({ userId: z.string().optional(), loanId: z.string().optional() });
 
@@ -271,7 +271,7 @@ function AdminNewTransfer() {
             </div>
             <div>
               <Label>{t("admin.transfer.bic")} *</Label>
-              <Input value={bic} onChange={(e) => setBic(e.target.value.toUpperCase())} className="mt-1.5 font-mono" placeholder="HSBCFR…" />
+              <Input value={bic} onChange={(e) => setBic(e.target.value.toUpperCase())} className="mt-1.5 font-mono" placeholder="TAXXXFR…" />
             </div>
           </div>
 

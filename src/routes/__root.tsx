@@ -47,22 +47,39 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: "HSBC BANK — Prêts en ligne instantanés" },
+      { title: "TRASTRA — Prêts en ligne instantanés" },
       { name: "description", content: "Demandez votre prêt en ligne en 3 minutes. Décision rapide, fonds disponibles sous 72h." },
-      { name: "author", content: "HSBC BANK" },
+      { name: "author", content: "TRASTRA" },
       { name: "theme-color", content: "#0a0a0a" },
       // PWA / iOS standalone
       { name: "mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
-      { name: "apple-mobile-web-app-title", content: "HSBC BANK" },
-      { name: "application-name", content: "HSBC BANK" },
-      { property: "og:title", content: "HSBC BANK — Prêts en ligne instantanés" },
+      { name: "apple-mobile-web-app-title", content: "TRASTRA" },
+      { name: "application-name", content: "TRASTRA" },
+      { property: "og:title", content: "TRASTRA — Prêts en ligne instantanés" },
       { property: "og:description", content: "Demandez votre prêt en ligne en 3 minutes. Décision rapide, fonds disponibles sous 72h." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "referrer", content: "strict-origin-when-cross-origin" },
+      // CSP (relaxed enough for Tailwind v4 inline styles, Google Fonts, ipapi geolocation lookup,
+      // Supabase API + realtime, and the theme-init inline script).
+      {
+        httpEquiv: "Content-Security-Policy",
+        content:
+          "default-src 'self'; " +
+          "script-src 'self' 'unsafe-inline'; " +
+          "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+          "font-src 'self' data: https://fonts.gstatic.com; " +
+          "img-src 'self' data: blob: https:; " +
+          "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://ipapi.co; " +
+          "frame-ancestors 'self'; " +
+          "base-uri 'self'; " +
+          "form-action 'self';",
+      },
+      { httpEquiv: "X-Content-Type-Options", content: "nosniff" },
+      { httpEquiv: "Permissions-Policy", content: "geolocation=(), microphone=(), camera=()" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

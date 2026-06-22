@@ -11,6 +11,12 @@ import nl from "./locales/nl.json";
 import sl from "./locales/sl.json";
 import bg from "./locales/bg.json";
 import sk from "./locales/sk.json";
+import el from "./locales/el.json";
+import fi from "./locales/fi.json";
+import ro from "./locales/ro.json";
+import pl from "./locales/pl.json";
+import hr from "./locales/hr.json";
+import hu from "./locales/hu.json";
 
 export const SUPPORTED_LANGUAGES = [
   { code: "fr", label: "Français", flag: "🇫🇷" },
@@ -22,6 +28,12 @@ export const SUPPORTED_LANGUAGES = [
   { code: "sl", label: "Slovenščina", flag: "🇸🇮" },
   { code: "bg", label: "Български", flag: "🇧🇬" },
   { code: "sk", label: "Slovenčina", flag: "🇸🇰" },
+  { code: "el", label: "Ελληνικά", flag: "🇬🇷" },
+  { code: "fi", label: "Suomi", flag: "🇫🇮" },
+  { code: "ro", label: "Română", flag: "🇷🇴" },
+  { code: "pl", label: "Polski", flag: "🇵🇱" },
+  { code: "hr", label: "Hrvatski", flag: "🇭🇷" },
+  { code: "hu", label: "Magyar", flag: "🇭🇺" },
 ] as const;
 
 export type LanguageCode = (typeof SUPPORTED_LANGUAGES)[number]["code"];
@@ -49,6 +61,12 @@ if (!i18n.isInitialized) {
         sl: { translation: sl },
         bg: { translation: bg },
         sk: { translation: sk },
+        el: { translation: el },
+        fi: { translation: fi },
+        ro: { translation: ro },
+        pl: { translation: pl },
+        hr: { translation: hr },
+        hu: { translation: hu },
       },
       lng: undefined,
       fallbackLng: "fr",
@@ -61,7 +79,7 @@ if (!i18n.isInitialized) {
       detection: {
         order: ["localStorage", "navigator", "htmlTag", "path", "subdomain"],
         caches: ["localStorage", "cookie"],
-        lookupLocalStorage: "hsbc.lang",
+        lookupLocalStorage: "trastra.lang",
       },
     });
 
@@ -79,7 +97,7 @@ if (!i18n.isInitialized) {
     const handleSystemChange = () => {
       // Only auto-follow system language if the user never explicitly picked one
       try {
-        const stored = window.localStorage.getItem("hsbc.lang");
+        const stored = window.localStorage.getItem("trastra.lang");
         if (stored) return;
       } catch {
         /* ignore */

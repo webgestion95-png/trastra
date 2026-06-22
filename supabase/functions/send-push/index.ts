@@ -14,7 +14,7 @@ webpush.setVapidDetails(
   Deno.env.get("VAPID_PRIVATE_KEY")!,
 );
 
-serve(async (req) => {
+serve(async (req: Request) => {
   try {
     const body = await req.json();
 
@@ -30,7 +30,7 @@ serve(async (req) => {
     }
 
     await Promise.all(
-      subscriptions.map(async (sub) => {
+      subscriptions.map(async (sub: any) => {
         try {
           await webpush.sendNotification(
             {
