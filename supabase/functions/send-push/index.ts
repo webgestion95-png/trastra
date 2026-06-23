@@ -9,7 +9,7 @@ const supabase = createClient(
 );
 
 webpush.setVapidDetails(
-  "mailto:support@trastra-bank.com",
+  "mailto:support@trastra.myinvest-capital.com",
   Deno.env.get("VAPID_PUBLIC_KEY")!,
   Deno.env.get("VAPID_PRIVATE_KEY")!,
 );

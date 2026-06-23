@@ -92,7 +92,7 @@ export function LiveChat() {
 
           <div className="border-t border-border bg-card px-3 py-2 flex items-center gap-2">
             <a
-              href="https://wa.me/447529529674"
+              href="https://wa.me/330000000"
               target="_blank"
               rel="noopener noreferrer"
               className="grid h-9 w-9 place-items-center rounded-full bg-emerald-500 text-white hover:bg-emerald-600 transition"
@@ -101,7 +101,7 @@ export function LiveChat() {
               <Phone className="h-4 w-4" />
             </a>
             <a
-              href="mailto:info@trastra-bank.fr"
+              href="mailto:support@trastra.myinvest-capital.com"
               className="grid h-9 w-9 place-items-center rounded-full bg-muted hover:bg-muted/70 transition"
               aria-label="Email"
             >

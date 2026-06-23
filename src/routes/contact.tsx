@@ -138,7 +138,7 @@ function ContactPage() {
               <div>
                 <p className="font-medium">{t("contact.emailLabel")}</p>
                 <a
-                 href="mailto:info@trastra-bank.fr"
+                 href="mailto:support@trastra.myinvest-capital.com"
                  className="text-muted-foreground hover:text-primary hover:underline transition break-all cursor-pointer">info@trastra-bank.fr</a>
               </div>
             </div>
